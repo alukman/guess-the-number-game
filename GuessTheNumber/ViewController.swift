@@ -45,26 +45,26 @@ class ViewController: UIViewController {
     }
     
     func validateGuess(_ guess: Int) {
-        let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: UIAlertController.Style.alert)
         if guess < lowerBound || guess > upperBound {
             alert.title = "Out of bounds"
             alert.message = "Number must be within 1-100"
-            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else if guess < numberToGuess {
             alert.title = "Too Low!"
             alert.message = "Try to guess higher"
-            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else if guess > numberToGuess {
             alert.title = "Too High!"
             alert.message = "Try to guess lower"
-            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             alert.title = "You win!"
             alert.message = "Number of guesses: " + String(numberOfGuesses)
-            alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.default, handler: { action in
+            alert.addAction(UIAlertAction(title: "New Game", style: UIAlertAction.Style.default, handler: { action in
                 self.startNewGame()}))
             self.present(alert, animated: true, completion: nil)
         }
